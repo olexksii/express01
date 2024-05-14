@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import logger from './config/logger.js';
 import app from './app.js';
-import swagger from './swagger.js';
 
 dotenv.config();
 
@@ -19,8 +18,6 @@ mongoose.connection.on('error', (err) => {
 if (process.env.NODE_ENV !== 'production') {
     mongoose.set('debug', true);
 }
-
-swagger(app);
 
 let server;
 mongoose.connect(CONNECTION_URL,{useNewUrlParser: true,useUnifiedTopology: true}).then(()=>{

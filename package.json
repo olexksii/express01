@@ -32,6 +32,7 @@
     "mongoose": "^8.3.4",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
+    "openapi": "^1.0.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "password-validator": "^5.3.0",

@@ -1,11 +1,8 @@
-import { version } from "mongoose";
 import swaggerJSDoc from "swagger-jsdoc";
-import swaggerUi from "swagger-ui-express";
-import { info } from "winston";
 
 const options = {
     swaggerDefinition: {
-        restapi: '3.0.0',
+        openapi: '3.1.0',
         info: {
             title: 'My API',
             version: '1.0.0',
@@ -17,11 +14,9 @@ const options = {
             },
         ],
     },
-    apis: ['**/*.js'],
+    apis: ['./*.js'],
 }
 
 const spec = swaggerJSDoc(options)
 
-module.exports = (app) => {
-    app.use('api-docs', swaggerUi.serve, swaggerUi.setup(spec))
-}
+export default {spec}
