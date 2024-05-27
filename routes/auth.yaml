@@ -37,3 +37,33 @@ paths:
                     type: string
         '400':
           description: Bad Request
+  /v1/auth/register:
+    post:
+      tags:
+        - "Auth"
+      summary: "Register API"
+      operationId: "ctrlValue.postRegister"
+      requestBody:
+        description: User Register
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Register Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: Invalid Input
