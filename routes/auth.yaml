@@ -1,0 +1,42 @@
+paths:
+  /v1/auth/login:
+    post:
+      tags:
+        - "Auth"
+      summary: "Login API"
+      operationId: "ctrlValue.postLogin"
+      requestBody:
+        description: user Login
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  refreshtoken:
+                    type: string
+                  accesstoken:
+                    type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  type:
+                    type: string

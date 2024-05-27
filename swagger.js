@@ -1,22 +1,34 @@
 import swaggerJSDoc from "swagger-jsdoc";
+// const { version } = require('./package.json');
+// import {version} from './package.json';
 
-const options = {
-    swaggerDefinition: {
-        openapi: '3.1.0',
-        info: {
-            title: 'My API',
-            version: '1.0.0',
-            description: 'My REST API',
+const url = 'http://localhost:5000';
+
+const swaggerDefinition = {
+    info: {
+        contact: {
+            email: 'webalpha128@gmail.com',
+            name: 'Vadym',
         },
-        servers: [
-            {
-                url: 'http://localhost:3000',
-            },
-        ],
+        description: 'Express-swagger-social login project.',
+        license: {
+            name: 'All Rights Reserved',
+        },
+        title: 'login project',
+        // version,
     },
-    apis: ['./*.js'],
+    openapi: '3.0.0',
+    produces: ['application/json'],
+    servers: [{ url }],
 }
 
-const spec = swaggerJSDoc(options)
+const route = () => `./routes/*.yaml`;
 
-export default {spec}
+const apis = [route()];
+const options = {
+    apis,
+    basePath:'/',
+    swaggerDefinition,
+};
+
+export const swaggerSpec = swaggerJSDoc(options);

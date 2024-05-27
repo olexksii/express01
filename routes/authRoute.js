@@ -1,3 +1,12 @@
+'use strict';
+
+/**
+ * Values Routes
+ * @module routes/authRoute
+ * @requires controllers/authController
+ */
+
+
 import express from 'express';
 import { isActiveUser } from '../middlewares/isActiveUser.js';
 import validate from '../utils/yupValidations.js';

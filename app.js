@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import routes from './routes/index.js'
 import error from './middlewares/error.js'
 import swaggerUi from "swagger-ui-express";
-import swagger from './swagger.js';
+import { swaggerSpec } from './swagger.js';
 
 const app = express();
 
@@ -30,7 +30,9 @@ app.use(compression());
 app.use(cors());
 app.options('*', cors);
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swagger));
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerSpec));
+app.get('/', (req, res, next) => res.redirect('api-docs'));
 
 app.use('/v1', routes);
 

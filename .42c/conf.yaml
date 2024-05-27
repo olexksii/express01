@@ -1,0 +1,5 @@
+apis:
+  routes/qwer.yml:
+    alias: api-title
+  routes/qwer.yaml:
+    alias: api-title1
