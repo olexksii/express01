@@ -1,3 +1,9 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  version: '1.0'
+servers:
+  - url: https://localhost:5000
 paths:
   /v1/auth/login:
     post:
@@ -31,12 +37,3 @@ paths:
                     type: string
         '400':
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                  type:
-                    type: string
