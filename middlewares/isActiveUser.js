@@ -11,7 +11,7 @@ const isActiveUser = async (req, res, next) => {
     try {
         const accessToken = req.get('Authorization');
         if (!accessToken)
-            throw new APIError(httpStatus.UNAUTHORIZED, 'Invalid Acess Token');
+            throw new APIError(httpStatus.UNAUTHORIZED, 'Do not exist Token');
 
         let tokenPayload = await verify(accessToken, process.env.JWT_SECRET);
         if(!tokenPayload || tokenPayload.type !== tokenTypes.ACCESS)

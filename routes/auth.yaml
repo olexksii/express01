@@ -21,8 +21,10 @@ paths:
               properties:
                 email:
                   type: string
+                  example: rkr1029@gmail.com
                 password:
                   type: string
+                  example: A3gjklz!
       responses:
         '200':
           description: Login success
@@ -67,3 +69,24 @@ paths:
                     type: string
         '400':
           description: Invalid Input
+  /v1/auth/logout:
+    post:
+      tags:
+        - "Auth"
+      summary: "Logout API"
+      operationId: "ctrlValue.postLogout"
+      requestBody:
+        description: User Logout
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Failure Logout

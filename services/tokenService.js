@@ -31,7 +31,7 @@ const saveRefreshToken = async (userId, loginTime, token) => {
 };
 
 const clearRefreshToken = async (token) => {
-    await RefreshToeknModel.findOneAndDelete({ token: token });
+    await RefreshTokenModel.findOneAndDelete({ token: token });
 };
 
 const generateAuthTokens = async (user) => {
