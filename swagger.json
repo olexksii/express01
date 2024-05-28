@@ -1,8 +1,0 @@
-swagger.setApiInfo({
-    title: "example API",
-    description: "API to do something, manage something...",
-    termsOfServiceUrl: "",
-    contact: "yourname@something.com",
-    license: "",
-    licenseUrl: ""
-});
