@@ -8,7 +8,7 @@ const swaggerDefinition = {
     info: {
         contact: {
             email: 'webalpha128@gmail.com',
-            name: 'Vadym',
+            name: 'webalpha',
         },
         description: 'Express-swagger-social login project.',
         license: {

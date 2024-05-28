@@ -21,7 +21,7 @@ paths:
               properties:
                 email:
                   type: string
-                  example: rkr1029@gmail.com
+                  example: webalpha128@gmail.com
                 password:
                   type: string
                   example: A3gjklz!
